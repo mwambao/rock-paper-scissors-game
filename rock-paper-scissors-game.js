@@ -38,21 +38,38 @@ console.log(myArray);
 playerRandom = Math.random();
 playerRandom = playerRandom * 3;
 playerRandom = Math.floor(playerRandom);
+//print the players selection from the array
 console.log("Player result: " + myArray[playerRandom]);
 
 //random number for computer
 computerRandom = Math.random();
 computerRandom = computerRandom * 3;
 computerRandom = Math.floor(computerRandom);
-console.log("Player result: " + myArray[computerRandom]);
+//print the computers selection from the array
+console.log("Computer result: " + myArray[computerRandom]);
 
 
-//message to the user
-if ( playerRandom === computerRandom ) {
-        console.log("It is a tie!!")
-        console.log("The players result is " + myArray[playerRandom] + " Computer result is " + myArray[computerRandom]);
-} else {
-    console.log("keep playing");
+
+// -- The game logic --
+if ( myArray[playerRandom] === myArray[computerRandom] ) {  // a tie
+        console.log("It is a TIE, KEEP PLAYING!!!!")
+
+} else if (myArray[playerRandom] === 'rock' && myArray[computerRandom] === 'scissors') {    //Player wins! rock beats scissors
+    console.log("You win! " + myArray[playerRandom] + " beats " + myArray[computerRandom]);
+
+} else if (myArray[playerRandom] === 'scissors' && myArray[computerRandom] === 'rock') {    //computer wins! rock beats scissors
+    console.log("You LOSE! " + myArray[playerRandom] + " beaten by " + myArray[computerRandom]);
+
+} else if (myArray[playerRandom] === 'scissors' && myArray[computerRandom] === 'paper') {  //Player wins! scissors beats paper
+    console.log("You win! " + myArray[playerRandom] + " beats " + myArray[computerRandom]);
+
+} else if (myArray[playerRandom] === 'paper' && myArray[computerRandom] === 'scissors') {  //Computer wins! scissors beat paper
+    console.log("You LOSE! " + myArray[playerRandom] + " beaten by " + myArray[computerRandom]);
+
+} else if (myArray[playerRandom] === 'paper' && myArray[computerRandom] === 'rock') {  //Player wins! paper beats rock
+    console.log("You win! " + myArray[playerRandom] + " beats " + myArray[computerRandom]);
+
+} else if (myArray[playerRandom] === 'rock' && myArray[computerRandom] === 'paper') {  //computer wins! paper beats rock
+    console.log("You LOSE! " + myArray[playerRandom] + " beaten by " + myArray[computerRandom]);
 }
-
 
